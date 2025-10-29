@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: app-container
-        image: nginx:1.21
+        image: gaurav20161/welcome:v1
         ports:
         - containerPort: 80
         resources:
