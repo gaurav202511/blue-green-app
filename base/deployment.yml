@@ -1,29 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: blue-app
+  name: blue-green-app
   labels:
     app: blue-green-app
-    color: blue
 spec:
   replicas: 2
   selector:
     matchLabels:
       app: blue-green-app
-      color: blue
   template:
     metadata:
       labels:
         app: blue-green-app
-        color: blue
     spec:
       containers:
       - name: app-container
-        image: gaurav20161/welcome:v1
+        image: gaurav20161/welcome:v1  # default, overridden by overlays
         ports:
         - containerPort: 80
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "250m"
-

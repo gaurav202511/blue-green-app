@@ -1,0 +1,20 @@
+resources:
+  - ../../base
+
+patches:
+  - target:
+      kind: Deployment
+      name: blue-green-app
+    patch: |
+      - op: replace
+        path: /metadata/name
+        value: blue-app
+      - op: add
+        path: /spec/template/metadata/labels/color
+        value: blue
+      - op: add
+        path: /spec/selector/matchLabels/color
+        value: blue
+      - op: replace
+        path: /spec/template/spec/containers/0/image
+        value: gaurav20161/welcome:v1
