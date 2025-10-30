@@ -6,6 +6,9 @@ patches:
       kind: Deployment
       name: blue-green-app
     patch: |
+      - op: add
+        path: /spec/template/metadata/labels/color
+        value: blue
       - op: replace
         path: /metadata/name
         value: blue-app
