@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: app-container
-        image: gaurav20161/welcome:v1  # default, overridden by overlays
+        image: gaurav20161/welcome:stable  # default, overridden by overlays
         ports:
         - containerPort: 80
