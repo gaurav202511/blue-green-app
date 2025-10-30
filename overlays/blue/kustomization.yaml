@@ -15,3 +15,12 @@ patches:
       - op: replace
         path: /spec/template/spec/containers/0/image
         value: gaurav20161/welcome:v1
+
+
+  - target:
+      kind: Service
+      name: blue-green-service
+    patch: |
+      - op: replace
+        path: /spec/selector/color
+        value: blue
