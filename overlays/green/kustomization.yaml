@@ -16,6 +16,7 @@ patches:
         path: /spec/template/spec/containers/0/image
         value: gaurav20161/welcome:v2
 
+
   - target:
       kind: Service
       name: blue-green-service
